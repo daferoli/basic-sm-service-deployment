@@ -25,6 +25,29 @@ The gateway folder includes the deployment for the gateway that will eventaully 
 
 From the software catalog or Operator hub, find Red Hat OpenShift Service Mesh 2 and install it.
 
+Next, create a new namespace `istio-system`
+
+And create the following ServiceMeshControlPlane
+
+```
+apiVersion: maistra.io/v2
+kind: ServiceMeshControlPlane
+metadata:
+  name: basic
+  namespace: istio-system
+spec:
+  version: v2.6
+  tracing:
+    type: None
+    sampling: 10000
+  addons:
+    kiali:
+      enabled: true
+      name: kiali
+    grafana:
+      enabled: true
+```
+
 ### Deploy Application
 
 In a fresh argo instance, create a new application that points to this repo using the iac path.
