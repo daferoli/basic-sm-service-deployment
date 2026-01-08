@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ping-google
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-openshift
+    spec:
+      containers:
+      - name: hello-openshift
+        image: quay.io/dferoli/ping-google:0.1.1

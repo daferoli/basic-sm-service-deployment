@@ -1,0 +1,15 @@
+{
+  "name": "basic-sm-service-deployment",
+  "version": "1.0.0",
+  "description": "Using this as a quick service to deploy on OSSM to test out capabilities and practice migrations",
+  "main": "ping.js",
+  "scripts": {
+    "start": "node ping.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

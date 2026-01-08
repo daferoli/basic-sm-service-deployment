@@ -1,2 +1,3 @@
 resources: 
-  - ./is.yaml
+  - deployment.yaml
+  - is.yaml
