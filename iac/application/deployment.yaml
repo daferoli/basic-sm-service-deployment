@@ -14,4 +14,4 @@ spec:
         image: quay.io/dferoli/ping-google:0.1.1
   selector:
     matchLabels:
-      app: hello-ping-google
+      app: ping-google
