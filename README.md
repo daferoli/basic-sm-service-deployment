@@ -23,7 +23,10 @@ The gateway folder includes the deployment for the gateway that will eventaully 
 
 ### Install OSSM
 
-From the software catalog or Operator hub, find Red Hat OpenShift Service Mesh 2 and install it.
+From the software catalog or Operator hub, find and install the following operators:
+ - Red Hat OpenShift Service Mesh 2
+ - Kiali Operator
+
 
 Next, create a new namespace `istio-system`
 
@@ -46,6 +49,20 @@ spec:
       name: kiali
     grafana:
       enabled: true
+```
+
+Also add the following ServiceMeshMemberRoll
+
+```
+apiVersion: maistra.io/v1
+kind: ServiceMeshMemberRoll
+metadata:
+  name: default
+  namespace: istio-system
+spec:
+  members:
+    - sm-practice
+    - practice-gateway
 ```
 
 ### Deploy Application

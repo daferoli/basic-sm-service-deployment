@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: ratings
+spec:
+  hosts:
+  - practice-gateway.apps.cluster-qcqvk.dynamic.redhatworkshops.io
+  http:
+  - name: "route-sm-practice"
+    match:
+    - uri:
+        prefix: "/sm-practice"
+    rewrite:
+      uri: "/"
+    route:
+    - destination:
+        host: ping-google

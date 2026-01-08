@@ -1,0 +1,3 @@
+resources:
+  - sidecar.yaml
+  - virtual-service.yaml

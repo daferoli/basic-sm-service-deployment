@@ -1,0 +1,13 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: gateway-route
+spec:
+  host: practice-gateway.apps.cluster-qcqvk.dynamic.redhatworkshops.io
+  to:
+    kind: Service
+    name: istio-ingressgateway
+    weight: 100
+  port:
+    targetPort: 80
+  wildcardPolicy: None
