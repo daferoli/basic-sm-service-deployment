@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ping-app
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/daferoli/basic-sm-service-deployment.git
+    path: iac/application
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: sm-practice

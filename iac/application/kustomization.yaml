@@ -1,4 +1,5 @@
 resources: 
+  - sm
   - deployment.yaml
   - service.yaml
   - is.yaml

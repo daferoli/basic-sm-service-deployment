@@ -1,2 +1,3 @@
 resources: 
-  - application
+  - ping-app
+  - gateway-app
